@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Raffle Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+    	function copyExampleData() {
+    		window.document.getElementById("candidates").value = "Sebas,300\r\nIria,25\r\nBarbara,25\r\nEmilio,100"; 
+    		return false;
+    	}
+    </script>
+</head>
+<body>
+	<h1>Raffle Thymeleaf Demo</h1>
+	
+	Indique el nombre de todos los participantes en el sorteo y, separado por una coma, el numero de tickets del que disponen.
+	
+	<br/><a href="#null" onclick="copyExampleData();">Ejemplo:</a>
+	<br/>Sebas,300<br/>Iria,25<br/>Barbara,25<br/>Emilio,100<br/><br/>
+	
+    <form action="#" th:action="@{/raffle}" th:object="${raffle}" method="post">
+    	<p>
+    	
+    		Lista de participantes: <br/>
+    	
+    		<textarea  rows="15" cols="50" th:field="*{candidates}" />
+    	
+    	</p>
+    	
+    	<p>
+    		<input type="submit" value="SORTEAR" /> 
+    		<input type="reset" value="BORRAR" />
+    	</p>
+    </form>
+</body>
+</html>

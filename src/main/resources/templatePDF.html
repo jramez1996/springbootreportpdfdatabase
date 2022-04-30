@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+
+   <div>
+		<img th:attr="src=@{/images/softtek.png}" src="../public/images/softtek.png" class="logo" title="Softtek InnovationsLab" alt="Logo InnovationsLab" />
+    </div>
+    <p class="thick title">Hola <span th:text="${name}"></span>!</p>
+
+	<table class="tabla-detalle">
+	  <th><td>Ganadores</td></th>
+      <tr th:each="winner : ${winners}">
+	    <td th:text="${winner}">Winner</td>
+	  </tr>
+    </table>	
+	
+	
+	<!-- Pie -->
+	<div id="footer" class="tabla-pie">	
+		<b>&copy; 2018 Softtek</b>
+	</div>
+
+
+	
+</body>
+</html>
